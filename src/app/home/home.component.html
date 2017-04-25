@@ -3,21 +3,12 @@
 </p>
 <ng-content></ng-content>
 
-<!--
-Method - 1: Property binding using []
-Wrap the property in []
-Wrap the variable name (containing the value for property) in quotes
- -->
-<br />
-<input [value]="myString" />
-<input [required]="myBoolean" />
-<br />
-<!--
-Method - 2: String interpolation using {{}}
-Note that there is no [] around the property here.
--->
-<input value="{{myString}}" />
-<input required="{{myBoolean}}" />
-<br/>
+<!-- 2 way data binding -->
+<label>Name: </label>
+<input [(ngModel)]="ninja.name" />
+<label>Belt: </label>
+<input [(ngModel)]="ninja.belt" />
 
-<button (click)="alertMe('I love pizza')">Click me</button>
+<p>{{ninja.name}}</p>
+<p>{{ninja.name}}</p>
+<p>{{ninja.belt}}</p>
