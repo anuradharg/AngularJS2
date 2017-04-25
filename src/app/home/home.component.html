@@ -8,12 +8,16 @@ Method - 1: Property binding using []
 Wrap the property in []
 Wrap the variable name (containing the value for property) in quotes
  -->
+<br />
 <input [value]="myString" />
 <input [required]="myBoolean" />
-
+<br />
 <!--
 Method - 2: String interpolation using {{}}
 Note that there is no [] around the property here.
 -->
 <input value="{{myString}}" />
 <input required="{{myBoolean}}" />
+<br/>
+
+<button (click)="alertMe('I love pizza')">Click me</button>
