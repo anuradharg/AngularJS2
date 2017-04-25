@@ -10,6 +10,10 @@ export class HomeComponent implements OnInit {
   myString = "I love pizza";
   myBoolean = true;
 
+  alertMe(val){
+    alert(val)
+  }
+
   constructor() { }
 
   ngOnInit() {
