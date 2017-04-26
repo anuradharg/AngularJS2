@@ -1,4 +1,15 @@
-<p>
+<!-- Attribute directive -->
+<p [ngClass]="classes">
   directory works!
 </p>
-{{ninja}}
+
+<!-- Structural directive -->
+<p *ngIf="test">
+  Only show if test is true
+</p>
+
+<style>
+  .blue {color: blue;}
+  .red {color: red;}
+  .underline {text-decoration: underline;}
+</style>
