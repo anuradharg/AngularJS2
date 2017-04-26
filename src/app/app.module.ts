@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 import { FilterPipe } from './filter.pipe';
 import { LoggingService } from './logging.service';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { LoggingService } from './logging.service';
     HttpModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [LoggingService],
+  providers: [LoggingService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
