@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoggingService } from '../logging.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-directory',
@@ -9,17 +10,19 @@ import { LoggingService } from '../logging.service';
 })
 export class DirectoryComponent implements OnInit {
 
-  ninjas=[
-    {name: 'Yoshi', belt: 'black'},
-    {name: 'Ryu', belt: 'red'},
-    {name: 'Crystal', belt: 'purple'}
-  ];
-  constructor(private logger: LoggingService) { }
+  ninjas=[];
+  constructor(private logger: LoggingService, private dataService: DataService) { }
 
   logIt() {
     this.logger.log();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataService.fetchData().subscribe(
+      (data) => this.ninjas = data //Method-1 - used when map() is used in DataService.
+
+      //(data) => this.ninjas = data.json() //Method 2 - refer DataService
+    );
+  }
 
 }

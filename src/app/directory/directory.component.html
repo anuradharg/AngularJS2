@@ -7,8 +7,7 @@
   <li *ngFor="let ninja of ninjas | filter:term">
     <div class="single-ninja">
     <span [ngStyle]="{background: ninja.belt}"> {{ninja.belt}} belt </span>
-    <h3> {{ninja.name}} </h3>
-     <div (click)="remove($event)" [attr.data-name]="ninja.name">delete</div>
+    <h3> {{ninja.name}} </h3>     
     </div>
   </li>
 </ul>
