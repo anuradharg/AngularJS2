@@ -1,5 +1,4 @@
 <h2>Ninja Listing</h2>
-
 <form id="filter">
   <label>Filter ninjas by name:</label>
   <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="term" />
@@ -7,11 +6,11 @@
 <ul id="ninja-listing">
   <li *ngFor="let ninja of ninjas | filter:term">
     <div class="single-ninja">
-      <!-- Belt Color -->
-      <span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span>
-      <!-- Ninja Name -->
-      <h3>{{ninja.name}}</h3>
-      <div (click)="remove($event)" [attr.data-name]="ninja.name">delete</div>
-    </div> 
+    <span [ngStyle]="{background: ninja.belt}"> {{ninja.belt}} belt </span>
+    <h3> {{ninja.name}} </h3>
+     <div (click)="remove($event)" [attr.data-name]="ninja.name">delete</div>
+    </div>
   </li>
 </ul>
+
+<button (click)="logIt()">Log me</button>

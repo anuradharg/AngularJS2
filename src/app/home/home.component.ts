@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  homeTitle = "Welcome to the ninja directory!";
 
-  homeTitle = "Welcome to the ninja directory";
+  constructor(private logger: LoggingService) { }
 
-  constructor() { }
+  logIt() {
+    this.logger.log();
+  }
 
   ngOnInit() {
   }
