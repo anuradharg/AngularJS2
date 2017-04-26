@@ -6,7 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  homeTitle = "Welcome to the ninja directory!";
+
+  homeTitle = "Welcome to the ninja directory";
 
   constructor() { }
 
