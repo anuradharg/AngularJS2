@@ -7,9 +7,13 @@
   <li *ngFor="let ninja of ninjas | filter:term">
     <div class="single-ninja">
     <span [ngStyle]="{background: ninja.belt}"> {{ninja.belt}} belt </span>
-    <h3> {{ninja.name}} </h3>     
+    <h3> {{ninja.name}} </h3>
     </div>
   </li>
 </ul>
 
-<button (click)="logIt()">Log me</button>
+<form id="add-ninja">
+  <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="name"/>
+  <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="belt"/>
+  <button (click)="fbPostData(name, belt)">Add Ninja</button>
+</form>
